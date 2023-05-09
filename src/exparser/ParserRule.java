@@ -30,6 +30,7 @@ public class ParserRule {
     public static ParserRule rule(Class<? extends TreeNode>...types){
         return  new ParserRule(Action.PUSH,(u,v)->true,null,types);
     }
+    
     public static <T> ParserRule rule(Function<T[],? extends T> reduce, Class<? extends T>...types){
         return  new ParserRule(Action.REDUCE,(u,v)->true,reduce,types);
     }

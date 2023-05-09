@@ -4,13 +4,16 @@ import java.util.Collections;
 import java.util.List;
 
 public abstract class Node implements TreeNode{
-    public abstract Object getValue();
-    public List<Node> getChildren(){
-        return Collections.emptyList();
-    }
-    public static abstract class ExpNode extends Node{
 
+    public abstract Object getValue();
+
+    public List<Node> getChildren(){
+        return Collectio
+        ns.emptyList();
     }
+
+    public static abstract class ExpNode extends Node{}
+
     public static class IntNode extends ExpNode{
         Node value;
         public IntNode(Node[] n){
@@ -90,6 +93,7 @@ public abstract class Node implements TreeNode{
             sign = n[0];
             exp = n[1];
         }
+        
         @Override
         public Object getValue() {
             return "Unary";

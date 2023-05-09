@@ -21,6 +21,7 @@ public enum LexemeType implements LexemeFormat{
         p = Pattern.compile(s);
         this.createNode = createNode;
     }
+    
     public Matcher match(CharSequence input){
         return p.matcher(input);
     }

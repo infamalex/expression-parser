@@ -17,18 +17,20 @@ public class Lexer {
 
         CharSequence[] format = formats.stream().map(LexemeFormat::getFormat).toArray(CharSequence[]::new);
         p = Pattern.compile(String.join("|", format));
-
     }
 
     public List<TreeNode> getParsed(String input) {
         Matcher m = p.matcher(input);
         List<TreeNode> lexed = new ArrayList<>();
-        while (m.find())
-            for(LexemeFormat lex: formats)
+        Stream
+        while (m.find()) {
+            for(LexemeFormat lex: formats) {
                 if(lex.matches(m.group())){
                     lexed.add(lex.createLexeme(m.group()));
                     break;
                 }
+            }
+        }
         return lexed;
     }
 

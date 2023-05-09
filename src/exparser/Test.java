@@ -14,6 +14,7 @@ public class Test {
         String input = "(5+24)*-4";
 
         frame.setVisible(true);
+        
         while (true) {
             frame.setContentPane(new TreeView(new Parser(l).parse(input)));
             frame.pack();
